@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Header from './Header';
 import CarouselHome from './CarouselHome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FichaAnimal from './FichaAnimal';
-import Filtro from './Filtro';
+// import Filtro from './Filtro';
 import Registro from './Registro';
 import Listado from './Listado';
+import SobreNosotros from './SobreNosotros';
 
 
 
@@ -37,6 +37,12 @@ class App extends React.Component {
       section: 4
     });
   }
+  goToSobreNosotros = () => {
+    this.setState({
+      section: 5
+    });
+  }
+
   currentSection() {
     if (this.state.section === 1) {
       return <CarouselHome />;
@@ -51,26 +57,53 @@ class App extends React.Component {
       return <FichaAnimal />;
     };
 
-    render() {
+    if (this.state.section === 5) {
+      return <SobreNosotros />;
+    };
+  }
+
+renderCurrentSection() {
+  switch (this.state.currentSection) {
+    case '1':
       return (
-        <div>
-          <Header />
-          <header>
-            <button onClick={this.goToListado}>Listado</button>
-            <button onClick={this.goToRegistro}>Registro</button>
-            <button onClick={this.toggleFichaAnimal}>FichaAnimal</button>
-          </header>
+        <CarouselHome />
 
-
-
-
-        </div>
       );
-    }
+
+    case '4':
+      return <FichaAnimal />
+    default:
+      return <Listado />;
+  }
+}
+
+
+
+
+
+
+render() {
+  return (
+    <div>
+      <header className="header">
+        <nav className="navbar-home flex-row-reverse">
+          <div className="container-fluid navegador" id="header-container">
+            <a onClick={this.goToCarouselHome} className="navbar-logo" href="#" id="logo"><img src="https://i.ibb.co/QQmKXZp/LOGO.png" alt="PETadoption" /> </a>
+            <a onClick={this.goToListado} className="navbar-brand" href="#" >ADOPTA </a>
+            <a onClick={this.goToRegistro} className="navbar-brand" href="#">DAR EN ADOPCION </a>
+            <a onClick={this.goToSobreNosotros} className="navbar-brand" href="#">SOBRE NOSOTROS </a>
+          </div>
+        </nav>
+      </header>
+
+      {this.currentSection()}
+    </div>
+  );
+}
   }
 
 
 
 
 
-  export default App;
+export default App;

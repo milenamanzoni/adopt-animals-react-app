@@ -8,13 +8,13 @@ class FichaAnimal extends React.Component {
             <div class="container">
                 <div class="card-group">
                     <div class="card">
-                        <img src="https://i.ibb.co/kJCkwTY/perro-1.jpg" class="card-img-top" alt="Fafi" />
+                        <img src={this.props.animalFicha.picture} class="card-img-top" alt="Fafi" />
                         <div class="card-body">
-                            <h1 class="card-title">Fafi</h1>
-                            <h4 class="card-text">Macho, 2 años, pelaje rubio</h4>
+                            <h1 class="card-title">{this.props.animalFicha.name}</h1>
+                            <h4 class="card-text">{this.props.animalFicha.description}</h4>
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#fafi">+
                             Info</button>
-                            <h6 class="card-text"><small class="text-muted">Centro, Montevideo</small></h6>
+                            <h6 class="card-text"><small class="text-muted">{this.props.animalFicha.barrio}</small></h6>
                         </div>
                     </div>
                 </div>
