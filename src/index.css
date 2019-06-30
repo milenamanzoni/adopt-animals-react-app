@@ -1,0 +1,80 @@
+.navbar-home {
+  background-color: #afd275;
+}
+.navbar-brand {
+  font-family:unset;
+  cursor: #FF6726;
+  color: #efe2ba;
+  font-size: 150%;
+}
+.navegador{
+  padding: 17px
+}
+#header-container{
+  text-align: right;
+ 
+}
+.flex-row-reverse{
+  height: 80px;
+}
+
+.flex-row-reverse>.a {
+  padding: 16px;
+}
+#logo {
+  float: left;
+  padding: 0px;
+  transform: scale(0.7);
+}
+.b-cat{
+  margin-top: 10px;
+}
+
+
+.btn-lg {
+  background-color: #afd275;
+  border-color: #afd275;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.bd-example {
+  height: 50%;
+}
+
+.formulario {
+  padding: 3% 30% 0% 30%;
+  list-style-type: none;
+}
+.card-group{
+margin-top: 2%;
+margin-right: 2%;
+margin-bottom: 2%;
+margin-left: 2%;
+}
+.card{
+  margin-top: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+
+}
+ 
+
+.container>.card-group>.card{
+  flex: 1 0 30%;
+}
+
+.margin-inputs {
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+.btn-enviar {
+  margin-top: 5px;
+}
+.buscador{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
