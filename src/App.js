@@ -7,6 +7,7 @@ import FichaAnimal from './FichaAnimal';
 import Registro from './Registro';
 import Listado from './Listado';
 import SobreNosotros from './SobreNosotros';
+import DetalleAnimal from './DetalleAnimal';
 
 
 
@@ -15,8 +16,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       section: 1,
+
     };
   }
+
+
+
   goToCarouselHome = () => {
     this.setState({
       section: 1
@@ -43,12 +48,26 @@ class App extends React.Component {
     });
   }
 
+  goToExtrainfo = (animal) => {
+    this.saveCurrentAnimal(animal)
+    this.setState({
+      section: 6
+    });
+   
+  }
+
+  saveCurrentAnimal(animal){
+    this.setState({
+      currentAnimal : animal
+    });
+  }
+
   currentSection() {
     if (this.state.section === 1) {
       return <CarouselHome />;
     }
     if (this.state.section === 2) {
-      return <Listado />;
+      return <Listado  goToExtrainfo={this.goToExtrainfo}/>;
     }
     if (this.state.section === 3) {
       return <Registro />;
@@ -60,22 +79,12 @@ class App extends React.Component {
     if (this.state.section === 5) {
       return <SobreNosotros />;
     };
+   
+      if (this.state.section === 6) {
+      return <DetalleAnimal animal={this.state}/>;
+    };
   }
 
-renderCurrentSection() {
-  switch (this.state.currentSection) {
-    case '1':
-      return (
-        <CarouselHome />
-
-      );
-
-    case '4':
-      return <FichaAnimal />
-    default:
-      return <Listado />;
-  }
-}
 
 
 
