@@ -7,7 +7,7 @@ class DetalleAnimal extends React.Component {
                 super(props);
                
                 this.state = {
-                        animal: this.props.animal.currentAnimal
+                        animal: this.props.animal
                       }
 
             }

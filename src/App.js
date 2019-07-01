@@ -81,7 +81,7 @@ class App extends React.Component {
     };
    
       if (this.state.section === 6) {
-      return <DetalleAnimal animal={this.state}/>;
+      return <DetalleAnimal animal={this.state.currentAnimal}/>;
     };
   }
 
